@@ -1,0 +1,61 @@
+{% extends 'news/base.html' %}
+{% block title %} {{ new.title }} {% endblock title %}
+{% block container %}
+<div class="container py-md-3">
+    {% endblock container %}
+
+    {% block sidebar %}
+    <div class="side-bar col-lg-2">
+        {% endblock sidebar %}
+
+        {% block new %}
+
+        <div class="left-ads-display col-lg-8">
+            <div class="row">
+                <div class="desc1-left col-md-6">
+                    <img src="{{ new.poster.url }}" class="img-fluid" alt="">
+                </div>
+                <div class="desc1-right col-md-6 pl-lg-4">
+                    <h3 class="editContent" style="outline: none; cursor: inherit;">
+                        {{ new.title }}
+                    </h3>
+                    <h5 class="editContent"></h5>
+                    <ul>
+                        <li style="list-style: none">
+                            <span><b>Дата:</b> {{ new.article_date }}</span></li>
+                        <li style="list-style: none">
+                            <span><b>Страна:</b> {{ new.country }}</span>
+                        </li>
+                        <li style="list-style: none">
+                            <span><b>Слоган:</b> {{ new.tagline }}</span>
+                        </li>
+                        <li style="list-style: none">
+                                    <span><b>Автор:</b>
+                                        {% for author in new.author.all %}
+                                            {{ author.name }}
+                                        {% endfor %}
+                                    </span>
+                        </li>
+                        <li style="list-style: none">
+                                    <span><b>Категория:</b>
+                                    {% for category in new.category.all %}
+                                        {{ category.name }}
+                                    {% endfor %}
+                                    </span>
+                        </li>
+
+                        </li>
+                </div>
+            </div>
+            <div class="row sub-para-w3layouts mt-5">
+
+                <h3 class="shop-sing editContent" style="outline: none; cursor: inherit;">
+                    О фильме {{ new.title }}
+                </h3>
+                <p class="editContent" style="outline: none; cursor: inherit;">
+                    {{ new.description }}
+                </p>
+            </div>
+            <hr>
+        </div>
+        {% endblock new %}
