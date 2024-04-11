@@ -22,15 +22,15 @@
                     <h5 class="editContent"></h5>
                     <ul>
                         <li style="list-style: none">
-                            <span><b>Дата:</b> {{ new.article_date }}</span></li>
+                            <span><b>Дата публикации:</b> {{ new.article_date }}</span></li>
                         <li style="list-style: none">
                             <span><b>Страна:</b> {{ new.country }}</span>
                         </li>
                         <li style="list-style: none">
-                            <span><b>Слоган:</b> {{ new.tagline }}</span>
+                            <span><b>Подзаголовок:</b> {{ new.tagline }}</span>
                         </li>
                         <li style="list-style: none">
-                                    <span><b>Автор:</b>
+                                    <span><b>Автор статьи:</b>
                                         {% for author in new.author.all %}
                                             {{ author.name }}
                                         {% endfor %}
